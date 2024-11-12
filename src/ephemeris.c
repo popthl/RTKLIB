@@ -756,7 +756,7 @@ extern void satposs(gtime_t teph, const obsd_t *obs, int n, const nav_t *nav,
         if (dts[i*2]==0.0) {
             if (!ephclk(time[i],teph,obs[i].sat,nav,dts+i*2)) continue;
             dts[1+i*2]=0.0;
-            *var=SQR(STD_BRDCCLK);
+            var[i]=SQR(STD_BRDCCLK);
         }
     }
     for (i=0;i<n&&i<MAXOBS;i++) {
